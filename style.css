@@ -1,0 +1,249 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+    
+
+@keyframes show{
+    from {
+        background-color: transparent;
+        color: transparent;
+    }
+    to {
+        background-color: white;
+        color: black;
+    }
+}
+@keyframes rotation{
+    from{
+        background-image: url(Kartu.png);
+    }
+    to{
+       background-image: linear-gradient(to bottom right, rgb(233, 221, 211), rgb(250, 245, 249), rgb(233, 221, 211) );
+    }
+}
+@keyframes rotationback{
+    from{
+       background-image: linear-gradient(to bottom right, rgb(233, 221, 211), rgb(250, 245, 249), rgb(233, 221, 211) );
+    }
+    to{
+        
+        background-image: url(Kartu.png);
+    }
+}
+@keyframes appear{
+    from{
+        color: transparent;
+        
+    }
+    to{
+        color: burlywood;
+    }
+}
+@keyframes disappear{
+    from{
+        color: burlywood;
+        
+    }
+    to{
+        color: transparent;
+    }
+}
+@keyframes shadow{
+    from{
+        
+        box-shadow:none;
+        opacity: 100%;
+    }
+    to{
+        opacity: 100%;
+       box-shadow:  -10px 10px 15px grey;
+    }
+}
+body{
+    /* background-color: bisque; */
+    background-image: url(table.jpg);
+    width: 100%;
+    height: 100%;
+    font-family: "Qwitcher Grypen", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24pt;
+    background-size: cover ;
+    background-repeat: no-repeat;
+    /* background-position: center ; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    /* border-left: solid grey; */
+    position: relative;
+    margin-top: 230px;
+    width: 80vh;
+    height: 45vh;
+    background-color: white;
+    /* border-radius: 15px; */
+    text-align: center;
+    box-shadow: -15px 15px 20px rgb(103, 102, 102) ;
+    transition-duration: 0.8s;
+}
+.card:hover{
+    transform: scale(1.2);
+    transition-duration: 1s;
+    /* position: absolute; */
+    /* z-index: -1; */
+}
+
+#covertop{
+    background-color: whitesmoke;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px grey;
+    z-index: 999;
+    /* border-radius: 15px; */
+    /* transform: rotateX(180deg); */
+    /* transform-origin: top; */
+    transition:0.8s;
+    position: relative;
+    width: 100%;
+    height: 25%;
+}
+#covertop.move{
+    transform-origin: top;
+    transform: rotateX(180deg);
+    /* transform-style: preserve-3d; */
+}
+
+
+.middle{
+    height: 75%;
+    /* line-height: 130px; */
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    cursor:auto;
+    width: 100%;
+    border-top-left-radius: -15px;
+    z-index: 1  ;
+    border-top-right-radius: -15px;
+    box-shadow: 0 0 20px grey;
+    background:transparent;
+}
+#dari{
+    float: right;
+    /* margin-top: 90px; */
+    padding-top: 10%;
+    margin: 10px;
+}
+.penerima{
+    height: 100%;
+    padding-top: 70px;
+}
+
+#content{
+    width: 450px;
+    height: 50px;
+    position: absolute; 
+    background-image: url(Kartu.png);
+    /* border-radius: 5px; */
+    /* border: solid gray; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: inset 0px -10px 10px grey;
+    z-index: 0;
+    background-position: top;
+    /* animation: shadow;
+    animation-duration: 2s; */
+    cursor: pointer;
+    /* z-index: -1; */
+    /* background-color: whitesmoke; */
+    /* z-index: -1; */
+    top: 24px;
+    /* border-top: 50px solid ; */
+}
+#contentcontainer.pointer{
+    cursor: pointer;
+}
+#content p{
+    animation: disappear;
+    font-family: "Indie Flower", cursive;
+    font-style: normal;
+    font-size: 65%;
+    /* /* animation: appear;  */
+    cursor:default;
+    animation-duration: .7s;
+    transform: rotateY(180deg);
+    /* display: none; */
+    color: transparent;
+}
+#content p.appear{
+    animation: appear;
+    color: burlywood;
+    animation-duration: 2s;
+    /* transition-duration: 2s; */
+    transform: rotateY(180deg);
+    /* transition-delay: 2s; */
+    /* display: block; */
+}
+#content.full{
+    /* animation: rotationback; */
+    background-color: whitesmoke;
+    animation: shadow;
+    /* animation-iteration-count: 1; */
+    animation-duration: 1.2s;
+    box-shadow:  -10px 10px 15px grey;
+    transition-duration: 1s;
+    transform: translateY(-95%);
+    background-size: cover cover;
+    cursor: default;
+    background-position: center center;
+    width:450px;
+    z-index: 9999;
+    height: 200px;
+}
+#content.full2{
+    animation: rotationback;
+    background-color: whitesmoke;
+    /* animation: shadow; */
+    /* animation-iteration-count: 1; */
+    animation-duration: 1s;
+    box-shadow:  -10px 10px 15px grey;
+    transition-duration: 1s;
+    transform: translateY(-95%);
+    background-size: cover cover;
+    background-position: center center;
+    width:450px;
+    z-index: 9999;
+    height: 200px;
+}
+#rotatebut{
+    width: 50px;
+    height: 50px;
+    animation: show;
+    animation-duration: 4s;
+    display: none;
+    border-radius: 50%;
+    position: absolute;
+    right: 270px;
+}
+
+#button.appear, #rotatebut.appear{
+    animation: show;
+    animation-duration: 4s;
+    display: inline-block;
+}
+#content.rotate{
+    /* animation: shadow;
+    animation-duration: 4s; */
+    box-shadow:  10px 10px 20px grey;
+    transition-duration: 1s;
+    animation: rotation;
+    animation-duration: 1s;
+    background-image: linear-gradient(to bottom right, rgb(233, 221, 211), rgb(250, 245, 249), rgb(233, 221, 211) );
+    transform: rotateY(-180deg);
+}
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ucapan</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="style2.css"> -->
+</head>
+<body>
+    <!-- <h1>Ucapan Ulang Tahun</h1> -->
+    <div class="card">
+        <div id="covertop"></div>
+        <div class="middle">
+            <div id="contentcontainer"                                                  style="display: flex; justify-content: center;" >
+                <div id="content" >
+                    <p id="ucapan1"></p>
+                </div>
+            </div>
+            <div class="penerima">
+                <p id="ucapan"></p>
+                <p id="dari"></p>
+            </div>
+        </div>
+        </div>
+    <button id="rotatebut"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAdNJREFUWEftl41Nw0AMRt1NYBOYBJgEmASYpDAJbAJ9Uow+rLuzkwtShTipqtpcfC+ff3OwM1uHM+OxPwv0ZGZ3e6g9q9CFmQFzZbaP2jNAQBxFlRlb32a2GrldlFEvbbX1w9NbjOAigOK6PrnudTaO1gBpvPTO/Vig3szseQvcWiBiBrDKAg7V+C6vNUAYBQZ33TdOwF0Eui5gXk5/PFSJMiAO4BMN8jtCYasH/FiFGgFpWrcMcri6UG3FayhF4UyDfgTEYe4CDF42ZNeDo62YBD0bpbSPdWaU0u6mVpxw7V1ORKVh9vUUQhlihG8MzPQpjTdcxsN1VxbUPOGqtO24VVUanpkBVbM12weQ169hRW8BcaPfnGZFRrJc1wQZxlELSH1erh8JWNlmC0gzLA3CokLakFcrpAWxVDsKUFMu09qxF9CnQFNgu5nbyzLc5qNEQYDhll3r0CxMrNTpEFepQzzhzZbZZmm+3g9LCZIBxQZb6thLHfO3EVc5VYeNGVBsstkU2JuH0qbq1BkQ+zQotdHiClzpi9+t8bYMU1HID/O5R2fk3tuH31MeyjRzKgr1Mk0bpu4heJmjf/2tI4JFF+1St2YUmq1Rzfv/gTJZz06hL1KMYiXlcnLqAAAAAElFTkSuQmCC" /></button>
+    <script >
+
+        var nama = localStorage.getItem('nama').toString();
+        var person = localStorage.getItem('person');
+       
+        document.getElementById('ucapan').innerHTML='A piece of letter for '+nama.charAt(0).toUpperCase()+nama.substring(1)+".";
+       
+        document.getElementById('dari').innerHTML='- '+person.charAt(0).toUpperCase()+person.substring(1)+".";
+       
+       
+    document.getElementById("covertop").addEventListener('click',()=>{
+        document.getElementById("covertop").classList.add('move');
+        
+    })
+
+    document.getElementById("contentcontainer").addEventListener('click',()=>{
+        document.getElementById("content").classList.add('full');
+        document.getElementById("rotatebut").classList.add('appear');
+    })
+
+    document.getElementById('rotatebut').addEventListener('click',()=>{
+        document.getElementById('ucapan1').style.cursor="default";
+        const confirmation = confirm('Do you want to rotate?');
+        if (confirmation){
+            document.getElementById('content').classList.remove('full');
+            document.getElementById('content').classList.add('full2');
+            document.getElementById('content').classList.toggle('rotate');
+            document.getElementById('ucapan1').classList.toggle('appear');
+            document.getElementById('ucapan1').innerHTML='I hope all your dreams and aspirations come true. May this new year of your life be filled with love, laughter, and blessings. Thank you for being such an amazing person to me. Your presence always brings me immense happiness, and I feel truly grateful to have you by my side, '+nama.charAt(0).toUpperCase()+nama.substring(1)+'.';
+
+        }
+        else{
+            alert('Okay');
+        }
+
+    })
+    
+    </script>
+</body>
+</html>
