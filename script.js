@@ -3,10 +3,10 @@ function nextNama() {
     localStorage.setItem('nama', nama);
     if (!localStorage.getItem('nama')){
         alert("Silahkan isi nama terlebih dahulu :>")
-        return false;
+        return false
     }
     else if(localStorage.getItem('nama')){
-        return true;
+        return true
     }
 }
 
@@ -20,13 +20,13 @@ function cektgl() {
     var today = new Date();
 
     if (tglLahir.getDate() === today.getDate() && tglLahir.getMonth() === today.getMonth()) {
-        window.location.href='ucapan.html'
+        return true
     }
     else if(!localStorage.getItem('Tanggal')){
         alert('Tanggal lahir juga harus diisi dong :>')
     }
      else {
-        alert ( 'Hari ini sayangnya bukan ulang tahun kamu ' + nama + ' :<');
+        alert ( 'Hari ini sayangnya bukan ulang tahun kamu, ' + nama + ' :<');
     }
 }
 
@@ -51,10 +51,10 @@ document.addEventListener('DOMContentLoaded', function(){
     
 })
 function next(){
-    nextNama()
-    nextPerson()
-    cektgl()
-    
+    if (nextNama()&&nextPerson()&&cektgl()){
+        window.location.href='ucapan.html'
+    }
+   
 
 }
     
